@@ -93,7 +93,10 @@ let features = {};
 
 //Add features to map
 map.on('load', function() {
-  map.addSource('homes', homes)
+  map.addSource('homes', {
+    'type': 'geojson',
+    'data': homes
+  });
   map.addLayer({
     'id': 'homes',
     'type': 'circle',
