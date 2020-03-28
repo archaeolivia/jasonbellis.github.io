@@ -4,8 +4,8 @@
     <meta charset='utf-8' />
     <title>Display a map</title>
     <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
-    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.42.2/mapbox-gl.js'></script>
-    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.42.2/mapbox-gl.css' rel='stylesheet' />
+    <script src="https://api.mapbox.com/mapbox-gl-js/v1.9.0/mapbox-gl.js"></script>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v1.9.0/mapbox-gl.css" rel="stylesheet" />
     <style>
         body { margin:0; padding:0; }
         #map { position:absolute; top:0; bottom:0; width:100%; }
@@ -19,10 +19,92 @@ mapboxgl.accessToken = 'pk.eyJ1Ijoic3Rvb2t5IiwiYSI6ImNpZWxncnU5MDAwYTNzZWt1N2VoN
 
 var map = new mapboxgl.Map({
     container: 'map', // container id
-    style: 'mapbox://styles/mapbox/streets-v9', // stylesheet location
-    center: [-74.50, 40], // starting position [lng, lat]
+    style: 'mapbox://styles/mapbox/streets-v11', // stylesheet location
+    center: [13.1910, 55.7047], // starting position [lng, lat]
     zoom: 9 // starting zoom
 });
+
+
+
+// Establish geojson point features for various life events.
+let homes = {
+  "type": "FeatureCollection",
+  "features": [{
+    "type": "Feature",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [13.1910, 55.7047]
+    },
+    "properties": {
+      "name": "Lund",
+      "information": ""
+      "importance": "Location I moved to study for my masters degree in archaeology."
+    }}, {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-85.7585, 38.2527]
+      },
+      "properties": {
+        "name": "Louisville",
+        "information": ""
+        "importance": "Location I grew up in. Attended all education till college in a suburb of Louisville called Goshen in Oldham County."
+      }
+    }, {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-84.4519, 39.0331]
+      },
+      "properties": {
+        "name": "Highland Heights",
+        "information": "Composed of three counties on the southern side of the Ohio River just south of Cincinnati. Considered a part of greater Cincinnati while maintaining its own identiy."
+        "importance": "Location I moved attended undergrad. Home of Northern Kentucky University "
+      }
+    }, {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-84.4472, 39.0751]
+      },
+      "properties": {
+        "name": "Fort Thomas",
+        "information": "Composed of three counties on the southern side of the Ohio River just south of Cincinnati. Considered a part of greater Cincinnati while maintaining its own identiy."
+        "importance": "Location I moved to later in undergrad and live at during the start of my professional career. "
+      }
+    }, {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-84.5120, 39.1031]
+      },
+      "properties": {
+        "name": "Cincinnati",
+        "information": ""
+        "importance": "Location in which my first few jobs out of undergrad were located. Also lived in a subburb of Cincinnati for a while."
+      }
+    }]
+  };
+
+let education = {};
+let work = {};
+let excavations = {};
+let features = {};
+
+//Add features to map
+map.on('load', function() {
+  map.addSource('homes', homes)
+  map.addLayer({
+    'id': 'homes',
+    'type': 'circle',
+    'source': 'homes',
+    'paint': {
+      'circle-color': '#888',
+      'circle-radius': 10,
+    }
+  });
+}
+
 </script>
 
 </body>
