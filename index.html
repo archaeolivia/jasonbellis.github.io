@@ -17,7 +17,7 @@
 <script>
 mapboxgl.accessToken = 'pk.eyJ1Ijoic3Rvb2t5IiwiYSI6ImNpZWxncnU5MDAwYTNzZWt1N2VoNHBiajYifQ.PPBpAP3rWcAAnMiAu1iJLg';
 
-var map = new mapboxgl.Map({
+let map = new mapboxgl.Map({
     container: 'map', // container id
     style: 'mapbox://styles/mapbox/streets-v11', // stylesheet location
     center: [13.1910, 55.7047], // starting position [lng, lat]
@@ -29,17 +29,19 @@ var map = new mapboxgl.Map({
 // Establish geojson point features for various life events.
 let homes = {
   "type": "FeatureCollection",
-  "features": [{
-    "type": "Feature",
-    "geometry": {
-      "type": "Point",
-      "coordinates": [13.1910, 55.7047]
-    },
-    "properties": {
-      "name": "Lund",
-      "information": "",
-      "importance": "Location I moved to study for my masters degree in archaeology."
-    }}, {
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [13.1910, 55.7047]
+      },
+      "properties": {
+        "name": "Lund",
+        "information": "",
+        "importance": "Location I moved to study for my masters degree in archaeology."
+      }
+    }, {
       "type": "Feature",
       "geometry": {
         "type": "Point",
@@ -92,18 +94,18 @@ let excavations = {};
 let features = {};
 
 //Add features to map
-map.on('load', function() {
-  map.addSource('homes', {
-    'type': 'geojson',
-    'data': homes
+map.on("load", function() {
+  map.addSource("homes", {
+    "type": "geojson",
+    "data": homes
   });
   map.addLayer({
-    'id': 'homes',
-    'type': 'circle',
-    'source': 'homes',
-    'paint': {
-      'circle-color': '#888',
-      'circle-radius': 10,
+    "id": "homes",
+    "type": "circle",
+    "source": "homes",
+    "paint": {
+      "circle-color": "#888",
+      "circle-radius": 10,
     }
   });
 });
