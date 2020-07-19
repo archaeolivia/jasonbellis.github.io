@@ -1,4 +1,4 @@
-//Core Map logic goes here
+//Core Portfolio constructor logic goes here
 
 export default class Portfolio {
 	constructor(locations, styleData) {
@@ -25,19 +25,26 @@ export default class Portfolio {
 
 		//Add features to map
 		this.map.on("load", function() {
-			this.map.addSource("homes", {
-			  "type": "geojson",
-			  "data": this.homes //Points towards our home dataset
-			});
-			this.map.addLayer({
-			  "id": "homes",
-			  "type": "circle",
-			  "source": "homes",
-			  "paint": {
-				"circle-color": "#888",
-				"circle-radius": 10,
-			  }
-			});
+			//call data loading here
+			addDataToMap()
 		});
 	}
+}
+
+function addDataToMap() {
+	//Add Sources
+    Portfolio.map.addSource("homes", {
+        "type": "geojson",
+        "data": Portfolio.homes //Points towards our home dataset
+    });
+	//Add Layers
+	Portfolio.map.addLayer({
+        "id": "homes",
+        "type": "circle",
+        "source": "homes",
+        "paint": {
+          "circle-color": "#888",
+          "circle-radius": 10,
+        }
+    });
 }
