@@ -10,9 +10,6 @@ import {
 
 export default class Portfolio {
 	constructor(locations, styleData) {
-		//Store access token
-		this.mapboxgl.accessToken = 'pk.eyJ1Ijoic3Rvb2t5IiwiYSI6ImNpZWxncnU5MDAwYTNzZWt1N2VoNHBiajYifQ.PPBpAP3rWcAAnMiAu1iJLg'
-		
 		//Establish the values for our geographical features
 		this.schools = locations.hasOwnProperty('schools') ? locations.schools : null;
 		this.work = locations.hasOwnProperty('work') ? locations.work : null;
@@ -30,6 +27,9 @@ export default class Portfolio {
 		    center: [13.1910, 55.7047], // starting position [lng, lat]
 		    zoom: 9 // starting zoom
 		});
+
+		//Store access token
+		this.mapboxgl.accessToken = 'pk.eyJ1Ijoic3Rvb2t5IiwiYSI6ImNpZWxncnU5MDAwYTNzZWt1N2VoNHBiajYifQ.PPBpAP3rWcAAnMiAu1iJLg';
 
 		  //Add features to map
 		  map.on("load", function() {
