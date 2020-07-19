@@ -9,7 +9,7 @@ import {
 // } from 'style'
 
 export default class Portfolio {
-	construction(locations, styleData) {
+	constructor(locations, styleData) {
 		//Store access token
 		this.mapboxgl.accessToken = 'pk.eyJ1Ijoic3Rvb2t5IiwiYSI6ImNpZWxncnU5MDAwYTNzZWt1N2VoNHBiajYifQ.PPBpAP3rWcAAnMiAu1iJLg'
 		
