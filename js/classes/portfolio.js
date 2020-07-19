@@ -13,6 +13,9 @@ export default class Portfolio {
 		this.zooming = false; //This is true only when map is in the middle of a zoom operation!
 		this.panning = false; //This is true only when map is panning!
 
+		//Store access token
+		mapboxgl.accessToken = 'pk.eyJ1Ijoic3Rvb2t5IiwiYSI6ImNpZWxncnU5MDAwYTNzZWt1N2VoNHBiajYifQ.PPBpAP3rWcAAnMiAu1iJLg';
+
 		this.map = new mapboxgl.Map({
 		    container: 'map', // container id
 		    style: 'mapbox://styles/mapbox/streets-v11', // stylesheet location
@@ -20,16 +23,13 @@ export default class Portfolio {
 		    zoom: 9 // starting zoom
 		});
 
-		//Store access token
-		this.mapboxgl.accessToken = 'pk.eyJ1Ijoic3Rvb2t5IiwiYSI6ImNpZWxncnU5MDAwYTNzZWt1N2VoNHBiajYifQ.PPBpAP3rWcAAnMiAu1iJLg';
-
-		  //Add features to map
-		  map.on("load", function() {
-			map.addSource("homes", {
+		//Add features to map
+		this.map.on("load", function() {
+			this.map.addSource("homes", {
 			  "type": "geojson",
 			  "data": homes
 			});
-			map.addLayer({
+			this.map.addLayer({
 			  "id": "homes",
 			  "type": "circle",
 			  "source": "homes",
@@ -38,6 +38,6 @@ export default class Portfolio {
 				"circle-radius": 10,
 			  }
 			});
-		  });
+		});
 	}
 }
