@@ -5,8 +5,8 @@ export default class Portfolio {
 		//Establish the values for our geographical features
 		this.schools = locations.hasOwnProperty('schools') ? locations.schools : null;
 		this.work = locations.hasOwnProperty('work') ? locations.work : null;
-		this.excavations = locations.hasOwnProperty('excavations') ? locations.excavation : null;
-		this.homes = locations.hasOwnProperty('home') ? locations.home : null;
+		this.excavations = locations.hasOwnProperty('excavations') ? locations.excavations : null;
+		this.homes = locations.hasOwnProperty('homes') ? locations.homes : null;
 
 		this.bounds = null;
 
