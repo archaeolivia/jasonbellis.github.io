@@ -1,4 +1,4 @@
-import addDataToMap from "./main.js"
+import addDataToMap from "../main.js"
 
 //Core Portfolio constructor logic goes here
 export default class Portfolio {
