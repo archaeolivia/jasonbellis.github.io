@@ -27,7 +27,7 @@ export default class Portfolio {
 		this.map.on("load", function() {
 			this.map.addSource("homes", {
 			  "type": "geojson",
-			  "data": homes
+			  "data": this.homes //Points towards our home dataset
 			});
 			this.map.addLayer({
 			  "id": "homes",
