@@ -1,5 +1,6 @@
-//Core Portfolio constructor logic goes here
+import addDataToMap from "./main.js"
 
+//Core Portfolio constructor logic goes here
 export default class Portfolio {
 	constructor(locations, styleData) {
 		//Establish the values for our geographical features
@@ -29,22 +30,4 @@ export default class Portfolio {
 			addDataToMap()
 		});
 	}
-}
-
-function addDataToMap() {
-	//Add Sources
-    Portfolio.map.addSource("homes", {
-        "type": "geojson",
-        "data": Portfolio.homes //Points towards our home dataset
-    });
-	//Add Layers
-	Portfolio.map.addLayer({
-        "id": "homes",
-        "type": "circle",
-        "source": "homes",
-        "paint": {
-          "circle-color": "#888",
-          "circle-radius": 10,
-        }
-    });
 }
