@@ -10,5 +10,5 @@ import {
 // } from 'style'
 
 //load the portfolio class into the app
-// if (!app.Portfolio) window.Portfolio = new Portfolio();
-app.Portfolio = new Portfolio(locations);
+if (!window.Portfolio) window.Portfolio = new Portfolio(locations);
+// app.Portfolio = new Portfolio(locations);
