@@ -2,7 +2,7 @@
 
 import {
 	locations
-} from 'data/locations'
+} from 'data/locations.js'
 
 // import {
 // 	styleData
