@@ -1,13 +1,5 @@
 //Core Map logic goes here
 
-import {
-	locations
-} from '../data/locations.js'
-
-// import {
-// 	styleData
-// } from 'style'
-
 export default class Portfolio {
 	constructor(locations, styleData) {
 		//Establish the values for our geographical features

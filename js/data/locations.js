@@ -71,4 +71,4 @@ let excavations = {};
 let features = {};
   
 
-export {locations};
+export { locations };
