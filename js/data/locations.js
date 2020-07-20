@@ -1,10 +1,10 @@
 // Establish geojson point features for various life events.
 
 //Location objects container
-let locations = {};
+let locationData = {};
 
 //Geojson of all places I have lived
-locations.homes = {
+locationData.homes = {
     "type": "FeatureCollection",
     "features": [
       {
@@ -71,4 +71,4 @@ let excavations = {};
 let features = {};
   
 
-export { locations };
+export { locationData };
