@@ -17,7 +17,7 @@
 
 		#container {
 			position: relative;
-			display: grid;
+			/* display: grid; */
 			/* grid-template-columns: repeat(3, 1fr);
 			grid-template-rows: repeat(3, 1fr); */
 			height: 100%;
@@ -25,18 +25,18 @@
 		}
 
 		#map {
-			grid-column: 1 / 4;
-			grid-row: 1 / 5;
+			/* grid-column: 1 / 4;
+			grid-row: 1 / 5; */
 			top: 0;
 			bottom: 0;
-			width: 100%;
+			width: 50%;
 			height: 100%;
 		}
 
 		#sidebar {
-			grid-column: 4 / 5;
-			grid-row: 1 / 5;
-			width: 100%;
+			/* grid-column: 4 / 5;
+			grid-row: 1 / 5; */
+			width: 50%;
 			height: 100%;
 		}
 
@@ -82,8 +82,8 @@
 	<div id="container" >
 		<div id='map'></div>
 		<div id="sidebar">
-				<h2>Tabs</h2>
-				<p>Click on the buttons inside the tabbed menu:</p>
+			<h2>Categories</h2>
+			<p>Click on the buttons to explore the tabbed menu:</p>
 
 			<div class="tab">
 			  <button class="tablinks" onclick="openCity(event, 'London')">London</button>
