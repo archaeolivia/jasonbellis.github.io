@@ -8,7 +8,7 @@ ROUGH DEV PLAN::
 - Build a solid modular mapbox-gl base for customization and future projects. (Base Structure established 07/19/2020)
 - Interactive front end displaying a updated CV/resume
 - Integration of and image viewer for projects
-- Integration of a series of high-res downloadable pdf maps
+- Integration of a series of high-res downloadable pdf maps for cartography portfolio.
 - Integration of 3DHop for 3D model integration
 
 PLANNED FEATURES:
@@ -21,3 +21,5 @@ PLANNED FEATURES:
 
 POTENTIAL FEATURES:
 -3D GIS integration?
+-Pipe data in using graphql or another back end system.
+-AWS integration if position (even if just firing a basic lambda function)
