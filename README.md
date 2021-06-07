@@ -1,4 +1,4 @@
-# jasonbellis.github.io
+# oliviabellis.github.io
 
 An open work space to act as a coding playground to show off my software dev, GIS, and archaeological skills. Currently a work in progress of an interactive web map functioning as a CV/resume as well as a portfollio for GIS, 3D modeling, and archaeological work.
 
